@@ -1,0 +1,24 @@
+why we can not create the object of enum?
+Answer :
+Enums are used to define fixed number of instances i.e. pre-defined,
+if we allow  some instance to be created, then this concept of having constant number of instances will fail.
+
+Note: -
+You can not create an instance of enums by using new operator in Java because the constructor of
+Enum in Java can only be private and Enums constants can only be created inside Enums itself.
+
+Question: can we define abstract methods in enum?
+Answer:
+Yes, we can declare the abstract methods in the enums.
+
+Question: Why EnumMap and EnumSet is preffered over of HashMap and HashSet?
+Answer: if we are using EnumMap instead of hashmap it uses ordinals to get the index and then it will put the values
+    in the array index. it does not need to do hashing and comparing equals and hashCode for the checking the equality
+    because it is already implemented in the enum, so because of this reason EnumMap and EnumSet would be faster.
+
+Question: why enums are faster while comparing?
+Answer: since enums are the constants so we can use == operator to compare them instead of equals so it would be fast.
+
+Question: Why enum is useful in implementing Singleton?
+Answer: because enum instances are the constants, so we can not have more than two same instance. that is how it guarantees the
+    Singleton.
