@@ -1,0 +1,34 @@
+Question : Why Primitives are not allowed in generics?
+Answer : it does not allows primitives because for the backward compatibility java needs to convert every type to Object
+    type. since primitives can not be converted to Object, that's why it is not allowed.
+
+
+Question: Can we create the objects of the Type parameter used in generics ?
+        public static <T> void getBoxType(T t){
+                t.new t();//this is not allowed.
+        		System.out.println(" getBoxType ");
+        	}
+Answer : t.new t() is not allowed because at run time only JVM knows the type of T, before to that it is known, so if something is
+        unknown then how one can create the object of unkown type.
+
+
+Question:
+
+class Employee{}
+class Person extends Employee{}
+
+Employee e=new Person();// this is possible. because they are co-varient.
+
+but
+List<Employee> empList=new ArrayList();
+List<Person>  personList=new ArrayList();
+
+
+empList=personList; //this will not work
+
+Answer : empList and personList are invariant, that's why we can not assign them to each other.this is applicable to
+           bounded types as well.
+
+
+Question:
+
