@@ -1,26 +1,27 @@
 package com.java.collection.test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.TreeSet;
+import java.security.cert.CollectionCertStoreParameters;
+import java.util.*;
 
 public class SortEnumsTest {
     public static void  main(String[] as){
-        TreeSet<Ranks> set=new TreeSet<>();
+        List<Ranks> set=new ArrayList<>();
         set.addAll(Arrays.asList(Ranks.values()));
 
 
-
         System.out.println(set);
-
+        Collections.sort(set);
+        System.out.println(set);
 
         TreeSet<Ranks> set2=new TreeSet<>(new RankComparator());
         set2.addAll(Arrays.asList(Ranks.values()));
 
         System.out.println(set2);
 
-        System.out.println(2<<5);
-        System.out.println(123345767>>>16);
+        List<Ranks> list=Arrays.asList(Ranks.values());
+        Comparator<Ranks> comparator=(Ranks r1,Ranks r2)->r1.name().compareTo(r2.name());
+        Collections.sort(list,comparator);
+        System.out.println(list);
     }
 }
 
@@ -30,3 +31,5 @@ class RankComparator implements Comparator<Ranks>{
         return r1.getRank()-r2.getRank();
     }
 }
+
+

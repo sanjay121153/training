@@ -1,7 +1,7 @@
 package com.java.collection.test;
 
 public enum Ranks {
-    RANK1(2),RANK2(3),RANK3(1);
+    RANK2(2),RANK5(3),RANK3(1);
 
     private int rank;
 
